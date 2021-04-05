@@ -1,21 +1,29 @@
-import React ,{useState, useEffect} from 'react';
-import {getAllLocations} from '../../modles/LocationManager';
-import {LocationCard, locationCard} from './locationCard';
+import React, { useState, useEffect } from 'react';
+import { getAllEmployees } from '../../modules/EmployeeManager';
+import { deleteLocation, getAllLocations } from '../../modules/LocationManager';
+import { LocationCard, locationCard } from './locationCard';
 
-export const LocationList = () =>{
-    const [locations,setLocations] = useState([]);
-    const getLocations = () =>{
-        return getAllLocations().then(locationsFromAPI =>{
+export const LocationList = () => {
+    const handleDeleteLocation = id => {
+        deleteLocation(id)
+            .then(() => getAllLocations().then(setLocations))
+    }
+    const [locations, setLocations] = useState([]);
+    const getLocations = () => {
+        return getAllLocations().then(locationsFromAPI => {
             setLocations(locationsFromAPI);
         });
     };
-    useEffect(()=>{
+    useEffect(() => {
         getLocations();
-    },[]);
+    }, []);
     return (
         <div className="container-cards">
-           {locations.map(location => 
-           <LocationCard key ={location.id} location ={location}/>)}
+            {locations.map(location =>
+                <LocationCard
+                    key={location.id}
+                    location={location}
+                    handleDeleteLocation={handleDeleteLocation} />)}
         </div>
     )
 }

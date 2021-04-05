@@ -1,5 +1,6 @@
 import React from "react";
 import { PropsAndState } from '../src/components/PropsAndState'
+import {getAllData} from './modules/DataManager'
 
 export const Home = () => (
     <>
@@ -13,3 +14,4 @@ export const Home = () => (
         <PropsAndState yourName={"Brenda"} />
     </>
 )
+getAllData()

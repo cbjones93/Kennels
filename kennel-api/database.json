@@ -1,40 +1,65 @@
 {
-    "animals": [
-        { "id": 1, "name": "Doodles", "breed": "Poodle"},
-        { "id": 2, "name": "Decker", "breed": "German Shepherd" },
-        { "id": 3, "name": "Esme", "breed": "Pitbull" }
-    ],
-    "customers": [
-        {
-            "id": 1,
-            "name": "Hannah Hall",
-            "address": "7002 Chestnut Ct"
-        },
-        {
-            "id": 2,
-            "name": "Bill Nye",
-            "address": "5252 Science Guy" 
-        }
-    ],
-    "owners":[
-        {"id":1, "name": "Chuck Norris", "phoneNumber": "(555)123-7890"},
-        {"id":2, "name": "Cody Jones","phoneNumber": "(555)456-7890"}
-    ],
-    "employees": [
-        {"id":1, "name": "Chuck Norris"},
-        {"id":2, "name": "Queen Elizabeth"},
-        {"id":3, "name": "Henry Cavill"}
-    ],
-    "locations": [
-        {
-            "id": 1,
-            "name": "Nashville North",
-            "address": "8422 Johnson Pike"
-        },
-        {
-            "id": 2,
-            "name": "Nashville South",
-            "address": "209 Emory Drive"
-        }
-    ]
+  "animals": [
+    {
+      "id": 1,
+      "name": "Doodles",
+      "breed": "Poodle"
+    },
+    {
+      "id": 2,
+      "name": "Decker",
+      "breed": "German Shepherd"
+    },
+    {
+      "id": 3,
+      "name": "Esme",
+      "breed": "Pitbull"
+    }
+  ],
+  "customers": [
+    {
+      "id": 1,
+      "name": "Hannah Hall",
+      "address": "7002 Chestnut Ct"
+    },
+    {
+      "id": 2,
+      "name": "Bill Nye",
+      "address": "7002 Chestnut Ct"
+    }
+  ],
+  "owners": [
+    {
+      "id": 1,
+      "name": "Chuck Norris",
+      "phoneNumber": "(555)123-7890"
+    },
+    {
+      "id": 2,
+      "name": "Cody Jones",
+      "phoneNumber": "(555)456-7890"
+    }
+  ],
+  "employees": [
+    {
+      "id": 1,
+      "name": "Chuck Norris"
+    },
+    {
+      "id": 3,
+      "name": "Henry Cavill"
+    }
+  ],
+  "locations": [
+    {
+      "id": 1,
+      "name": "Nashville North",
+      "address": "8422 Johnson Pike"
+    },
+    {
+    "id": 2,
+    "name": "Nashville South",
+    "address": "5272 Davidson Lane"
+    }
+  ]
 }

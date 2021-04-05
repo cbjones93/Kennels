@@ -1,7 +1,7 @@
 import React from "react";
 import "./location.css";
 
-export const LocationCard = ({location}) => {
+export const LocationCard = ({location, handleDeleteLocation}) => {
     return (
         <div className ="card">
             <div className="card-content">
@@ -10,6 +10,7 @@ export const LocationCard = ({location}) => {
                 </picture>
                 <h3><span className="card-petName"> {location.name}</span></h3>
                 <p>address:{location.address}</p>
+                <button type="button" onClick={() => handleDeleteLocation(location.id)}>Close Location</button>
             </div>
         </div>
     );

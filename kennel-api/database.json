@@ -13,6 +13,13 @@
       "breed": "German Shepherd",
       "customerId": 1,
       "locationId": 1
+    },
+    {
+      "name": "Ray",
+      "breed": "Lab",
+      "locationId": 1,
+      "customerId": 2,
+      "id": 3
     }
   ],
   "customers": [

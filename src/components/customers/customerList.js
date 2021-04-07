@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { deleteCustomer, getAllCustomers, } from '../../modules/CustomerManager';
-import { CustomerCard } from './customerCard'
+import { CustomerCard } from './CustomerCard'
 
 export const CustomerList = () => {
     const handleDeleteCustomer = id => {

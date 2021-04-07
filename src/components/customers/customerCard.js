@@ -1,5 +1,5 @@
 import React from "react";
-import "./customer.css";
+import "./Customer.css";
 
 export const CustomerCard = ({customer, handleDeleteCustomer}) =>{
     return (

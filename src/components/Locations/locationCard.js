@@ -1,5 +1,5 @@
 import React from "react";
-import "./location.css";
+import "./Location.css";
 
 export const LocationCard = ({location, handleDeleteLocation}) => {
     return (

@@ -1,5 +1,5 @@
 import React, {useState,useEffect} from 'react';
-import {getAnimalById} from '../../modles/AnimalManager';
+import {getAnimalById} from '../../modules/AnimalManager';
 import './AnimalDetail.css';
 import { useParams, useHistory } from "react-router-dom"
 

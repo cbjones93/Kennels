@@ -6,7 +6,7 @@ export const getAnimalById = (animalId) =>{
 }
 
 export const getAllAnimals = () =>{
-    return fetch (`${remoteURL}/animals`)
+    return fetch (`${remoteURL}/animals?_expand=location&_expand=customer`)
     .then(res => res.json())
 }
 export const deleteAnimal = (id) => {

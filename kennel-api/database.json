@@ -3,17 +3,16 @@
     {
       "id": 1,
       "name": "Doodles",
-      "breed": "Poodle"
+      "breed": "Poodle",
+      "customerId": 1,
+      "locationId": 1
     },
     {
       "id": 2,
       "name": "Decker",
-      "breed": "German Shepherd"
-    },
-    {
-      "id": 3,
-      "name": "Esme",
-      "breed": "Pitbull"
+      "breed": "German Shepherd",
+      "customerId": 1,
+      "locationId": 1
     }
   ],
   "customers": [
@@ -57,9 +56,9 @@
       "address": "8422 Johnson Pike"
     },
     {
-    "id": 2,
-    "name": "Nashville South",
-    "address": "5272 Davidson Lane"
+      "id": 2,
+      "name": "Nashville South",
+      "address": "5272 Davidson Lane"
     }
   ]
 }

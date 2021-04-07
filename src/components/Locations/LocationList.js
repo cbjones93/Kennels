@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { getAllEmployees } from '../../modules/EmployeeManager';
 import { deleteLocation, getAllLocations } from '../../modules/LocationManager';
-import { LocationCard, locationCard } from './LocationCard';
+import { LocationCard, locationCard } from './locationCard';
 
 export const LocationList = () => {
     const handleDeleteLocation = id => {

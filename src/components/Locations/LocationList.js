@@ -3,6 +3,7 @@ import { getAllEmployees } from '../../modules/EmployeeManager';
 import { deleteLocation, getAllLocations } from '../../modules/LocationManager';
 import { LocationCard} from './LocationCard';
 
+
 export const LocationList = () => {
     const handleDeleteLocation = id => {
         deleteLocation(id)

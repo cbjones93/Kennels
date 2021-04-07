@@ -1,6 +1,7 @@
 import React, {useState, useEffect} from 'react';
 import {deleteLocation, getLocationById} from '../../modules/LocationManager';
 import './LocationDetail.css';
+import {LocationCard} from './LocationCard'
 import { useParams, useHistory} from "react-router-dom";
 
 export const LocationDetail = () =>{

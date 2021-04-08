@@ -2,10 +2,10 @@
   "animals": [
     {
       "id": 1,
-      "name": "Doodles",
+      "name": "Poodles",
       "breed": "Poodle",
-      "customerId": 1,
-      "locationId": 1
+      "locationId": 1,
+      "customerId": 1
     },
     {
       "id": 2,
@@ -26,12 +26,19 @@
     {
       "id": 1,
       "name": "Hannah Hall",
-      "address": "7002 Chestnut Ct"
+      "address": "7002 Chestnut Ct",
+      "email": "h@h.com"
     },
     {
       "id": 2,
       "name": "Bill Nye",
-      "address": "7002 Chestnut Ct"
+      "address": "7002 Chestnut Ct",
+      "email": "b@b.com"
+    },
+    {
+      "email": "MickeyDs@home.com",
+      "name": "Ronald McDonald",
+      "id": 3
     }
   ],
   "owners": [

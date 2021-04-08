@@ -13,8 +13,10 @@ import { AnimalForm } from './animal/AnimalForm'
 import { Login } from "../components/auth/Login"
 import { Register } from "../components/auth/Register"
 import { AnimalEditForm } from "./animal/AnimalEditForm"
-import {EmployeeForm} from "./employees/EmployeeForm"
-import {LocationForm} from "./Locations/LocationForm"
+import { EmployeeForm } from "./employees/EmployeeForm"
+import {EmployeeEditForm} from "./employees/EmployeeEditForm"
+import { LocationForm } from "./Locations/LocationForm"
+import {LocationEditForm} from "./Locations/LocationEditForm"
 
 
 export const ApplicationViews = () => {
@@ -22,7 +24,7 @@ export const ApplicationViews = () => {
     return (
         <>
 
-{/* --------------------------------------ANIMALS----------------------------------------------------- */}
+            {/* --------------------------------------ANIMALS----------------------------------------------------- */}
             <Route exact path="/animals">
                 {(isAuthenticated()) ?
                     <AnimalList /> :
@@ -45,7 +47,7 @@ export const ApplicationViews = () => {
                 <AnimalForm />
             </Route>
 
-{/* ----------------------------------------EMPLOYEES--------------------------------------------------------- */}
+            {/* ----------------------------------------EMPLOYEES--------------------------------------------------------- */}
 
             <Route exact path="/employees">
                 {(isAuthenticated()) ?
@@ -57,7 +59,12 @@ export const ApplicationViews = () => {
                 <EmployeeForm />
             </Route>
 
-{/* ----------------------------------------CUSTOMERS--------------------------------------------------------- */}
+            <Route path="/employees/:employeeId(\d+)/edit">
+            {(isAuthenticated()) ?
+                    <EmployeeEditForm /> :
+                    <Redirect to="/login" />}
+            </Route>
+            {/* ----------------------------------------CUSTOMERS--------------------------------------------------------- */}
 
             <Route path="/customers">
                 {(isAuthenticated()) ?
@@ -65,9 +72,9 @@ export const ApplicationViews = () => {
                     <Redirect to="/login" />}
             </Route>
 
-           
 
-{/* ----------------------------------------LOCATIONS--------------------------------------------------------- */}
+
+            {/* ----------------------------------------LOCATIONS--------------------------------------------------------- */}
 
             <Route exact path="/locations">
                 {(isAuthenticated()) ?
@@ -75,17 +82,24 @@ export const ApplicationViews = () => {
                     <Redirect to="/login" />}
             </Route>
 
-            <Route path="/locations/:locationId(\d+)">
-                <LocationDetail />
+            <Route exact path="/locations/:locationId(\d+)">
+            {(isAuthenticated()) ?
+                <LocationDetail />:
+                <Redirect to="/login" />}
             </Route>
 
             <Route path="/locations/create">
                 <LocationForm />
             </Route>
 
+            <Route path="/locations/:locationId(\d+)/edit">
+            {(isAuthenticated()) ?
+                    <LocationEditForm /> :
+                    <Redirect to="/login" />}
+            </Route>
 
 
-{/* ----------------------------------------HOME--------------------------------------------------------- */}
+            {/* ----------------------------------------HOME--------------------------------------------------------- */}
 
 
             <Route path="/login">

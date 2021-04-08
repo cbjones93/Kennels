@@ -13,27 +13,20 @@ import { AnimalForm } from './animal/AnimalForm'
 import { Login } from "../components/auth/Login"
 import { Register } from "../components/auth/Register"
 import { AnimalEditForm } from "./animal/AnimalEditForm"
+import {EmployeeForm} from "./employees/EmployeeForm"
+import {LocationForm} from "./Locations/LocationForm"
+
 
 export const ApplicationViews = () => {
     const isAuthenticated = () => sessionStorage.getItem("kennel_customer") !== null;
     return (
         <>
+
+{/* --------------------------------------ANIMALS----------------------------------------------------- */}
             <Route exact path="/animals">
                 {(isAuthenticated()) ?
                     <AnimalList /> :
                     <Redirect to="/login" />}
-            </Route>
-
-            <Route path="/login">
-                <Login />
-            </Route>
-
-            <Route path="/register">
-                <Register />
-            </Route>
-            {/* Render the location list when http://localhost:3000/ */}
-            <Route exact path="/">
-                <Home />
             </Route>
 
             <Route exact path="/animals/:animalId(\d+)">
@@ -48,17 +41,33 @@ export const ApplicationViews = () => {
                     <Redirect to="/login" />}
             </Route>
 
-            <Route path="/employees">
+            <Route path="/animals/create">
+                <AnimalForm />
+            </Route>
+
+{/* ----------------------------------------EMPLOYEES--------------------------------------------------------- */}
+
+            <Route exact path="/employees">
                 {(isAuthenticated()) ?
                     <EmployeeList /> :
                     <Redirect to="/login" />}
             </Route>
+
+            <Route path="/employees/create">
+                <EmployeeForm />
+            </Route>
+
+{/* ----------------------------------------CUSTOMERS--------------------------------------------------------- */}
 
             <Route path="/customers">
                 {(isAuthenticated()) ?
                     <CustomerList /> :
                     <Redirect to="/login" />}
             </Route>
+
+           
+
+{/* ----------------------------------------LOCATIONS--------------------------------------------------------- */}
 
             <Route exact path="/locations">
                 {(isAuthenticated()) ?
@@ -70,10 +79,26 @@ export const ApplicationViews = () => {
                 <LocationDetail />
             </Route>
 
-            <Route path="/animals/create">
-                <AnimalForm />
+            <Route path="/locations/create">
+                <LocationForm />
             </Route>
 
+
+
+{/* ----------------------------------------HOME--------------------------------------------------------- */}
+
+
+            <Route path="/login">
+                <Login />
+            </Route>
+
+            <Route path="/register">
+                <Register />
+            </Route>
+            {/* Render the location list when http://localhost:3000/ */}
+            <Route exact path="/">
+                <Home />
+            </Route>
 
         </>
     )

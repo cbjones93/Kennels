@@ -1,5 +1,5 @@
 import React from "react"
-import { Route } from "react-router-dom"
+import { Route, Redirect } from "react-router-dom"
 import { Home } from "../Home"
 // import {AnimalCard} from "../components/animal/AnimalCard"
 import { AnimalList } from "./animal/AnimalList"
@@ -10,34 +10,60 @@ import { LocationList } from "./Locations/LocationList"
 import { AnimalDetail } from "./animal/AnimalDetail"
 import { LocationDetail } from './Locations/LocationDetail'
 import { AnimalForm } from './animal/AnimalForm'
+import { Login } from "../components/auth/Login"
+import { Register } from "../components/auth/Register"
+import { AnimalEditForm } from "./animal/AnimalEditForm"
 
 export const ApplicationViews = () => {
+    const isAuthenticated = () => sessionStorage.getItem("kennel_customer") !== null;
     return (
         <>
+            <Route exact path="/animals">
+                {(isAuthenticated()) ?
+                    <AnimalList /> :
+                    <Redirect to="/login" />}
+            </Route>
+
+            <Route path="/login">
+                <Login />
+            </Route>
+
+            <Route path="/register">
+                <Register />
+            </Route>
             {/* Render the location list when http://localhost:3000/ */}
             <Route exact path="/">
                 <Home />
             </Route>
 
-            {/* Render the animal list when http://localhost:3000/animals */}
-            <Route exact path="/animals">
-                <AnimalList />
+            <Route exact path="/animals/:animalId(\d+)">
+                {(isAuthenticated()) ?
+                    <AnimalDetail /> :
+                    <Redirect to="/login" />}
             </Route>
 
-            <Route path="/animals/:animalId(\d+)">
-                <AnimalDetail />
+            <Route path="/animals/:animalId(\d+)/edit">
+                {(isAuthenticated()) ?
+                    <AnimalEditForm /> :
+                    <Redirect to="/login" />}
             </Route>
 
             <Route path="/employees">
-                <EmployeeList />
+                {(isAuthenticated()) ?
+                    <EmployeeList /> :
+                    <Redirect to="/login" />}
             </Route>
 
             <Route path="/customers">
-                <CustomerList />
+                {(isAuthenticated()) ?
+                    <CustomerList /> :
+                    <Redirect to="/login" />}
             </Route>
 
             <Route exact path="/locations">
-                <LocationList />
+                {(isAuthenticated()) ?
+                    <LocationList /> :
+                    <Redirect to="/login" />}
             </Route>
 
             <Route path="/locations/:locationId(\d+)">

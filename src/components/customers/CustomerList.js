@@ -1,8 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import { deleteCustomer, getAllCustomers, } from '../../modules/CustomerManager';
 import { CustomerCard } from './CustomerCard'
+import { useHistory } from "react-router-dom"
 
 export const CustomerList = () => {
+    const history = useHistory();
     const handleDeleteCustomer = id => {
         deleteCustomer(id)
             .then(() => getAllCustomers().then(setCustomers));

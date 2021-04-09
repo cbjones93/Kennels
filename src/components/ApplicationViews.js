@@ -1,4 +1,4 @@
-import React from "react"
+import React, {useState} from "react"
 import { Route, Redirect } from "react-router-dom"
 import { Home } from "../Home"
 // import {AnimalCard} from "../components/animal/AnimalCard"
@@ -20,25 +20,30 @@ import {LocationEditForm} from "./Locations/LocationEditForm"
 
 
 export const ApplicationViews = () => {
-    const isAuthenticated = () => sessionStorage.getItem("kennel_customer") !== null;
+    const [isAuthenticated, setIsAuthenticated] = useState(sessionStorage.getItem("kennel_customer") !== null
+);
+    const setAuthUser = (user) => {
+        sessionStorage.setItem("kennel_customer", JSON.stringify(user))
+        setIsAuthenticated(sessionStorage.getItem("kennel_customer") !== null)
+    };
     return (
         <>
 
             {/* --------------------------------------ANIMALS----------------------------------------------------- */}
             <Route exact path="/animals">
-                {(isAuthenticated()) ?
+                {isAuthenticated ?
                     <AnimalList /> :
                     <Redirect to="/login" />}
             </Route>
 
             <Route exact path="/animals/:animalId(\d+)">
-                {(isAuthenticated()) ?
+                {isAuthenticated ?
                     <AnimalDetail /> :
                     <Redirect to="/login" />}
             </Route>
 
             <Route path="/animals/:animalId(\d+)/edit">
-                {(isAuthenticated()) ?
+                {isAuthenticated ?
                     <AnimalEditForm /> :
                     <Redirect to="/login" />}
             </Route>
@@ -50,7 +55,7 @@ export const ApplicationViews = () => {
             {/* ----------------------------------------EMPLOYEES--------------------------------------------------------- */}
 
             <Route exact path="/employees">
-                {(isAuthenticated()) ?
+                {isAuthenticated ?
                     <EmployeeList /> :
                     <Redirect to="/login" />}
             </Route>
@@ -60,14 +65,14 @@ export const ApplicationViews = () => {
             </Route>
 
             <Route path="/employees/:employeeId(\d+)/edit">
-            {(isAuthenticated()) ?
+            {isAuthenticated ?
                     <EmployeeEditForm /> :
                     <Redirect to="/login" />}
             </Route>
             {/* ----------------------------------------CUSTOMERS--------------------------------------------------------- */}
 
             <Route path="/customers">
-                {(isAuthenticated()) ?
+                {isAuthenticated ?
                     <CustomerList /> :
                     <Redirect to="/login" />}
             </Route>
@@ -77,13 +82,13 @@ export const ApplicationViews = () => {
             {/* ----------------------------------------LOCATIONS--------------------------------------------------------- */}
 
             <Route exact path="/locations">
-                {(isAuthenticated()) ?
+                {isAuthenticated ?
                     <LocationList /> :
                     <Redirect to="/login" />}
             </Route>
 
             <Route exact path="/locations/:locationId(\d+)">
-            {(isAuthenticated()) ?
+            {isAuthenticated ?
                 <LocationDetail />:
                 <Redirect to="/login" />}
             </Route>
@@ -93,7 +98,7 @@ export const ApplicationViews = () => {
             </Route>
 
             <Route path="/locations/:locationId(\d+)/edit">
-            {(isAuthenticated()) ?
+            {isAuthenticated?
                     <LocationEditForm /> :
                     <Redirect to="/login" />}
             </Route>
@@ -103,7 +108,7 @@ export const ApplicationViews = () => {
 
 
             <Route path="/login">
-                <Login />
+                <Login  setAuthUser={setAuthUser}/>
             </Route>
 
             <Route path="/register">
@@ -111,7 +116,7 @@ export const ApplicationViews = () => {
             </Route>
             {/* Render the location list when http://localhost:3000/ */}
             <Route exact path="/">
-                <Home />
+                <Home setAuthUser={setAuthUser}/>
             </Route>
 
         </>

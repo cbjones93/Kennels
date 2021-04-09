@@ -4,7 +4,15 @@ export const getAnimalById = (animalId) =>{
     return fetch (`${remoteURL}/animals/${animalId}?_expand=location&_expand=customer`)
     .then(res => res.json())
 }
-
+export const getRandomId = () =>{
+  return fetch (`${remoteURL}/animals`)
+  .then(result => result.json())
+  .then(animals => {
+    const randomIndex = Math.floor(Math.random() * animals.length);
+    const randomAnimal = animals[randomIndex];
+    return randomAnimal.id;
+  })
+}
 export const getAllAnimals = () =>{
     return fetch (`${remoteURL}/animals?_expand=location&_expand=customer`)
     .then(res => res.json())

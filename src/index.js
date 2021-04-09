@@ -14,11 +14,3 @@ ReactDOM.render(
     document.getElementById("root")
 )
 
-ReactDOM.render(
-    <React.StrictMode>
-        <Router>
-            <NavBar />
-        </Router>
-    </React.StrictMode>,
-    document.getElementById("nav")
-)

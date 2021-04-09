@@ -19,13 +19,7 @@ import { LocationForm } from "./Locations/LocationForm"
 import {LocationEditForm} from "./Locations/LocationEditForm"
 
 
-export const ApplicationViews = () => {
-    const [isAuthenticated, setIsAuthenticated] = useState(sessionStorage.getItem("kennel_customer") !== null
-);
-    const setAuthUser = (user) => {
-        sessionStorage.setItem("kennel_customer", JSON.stringify(user))
-        setIsAuthenticated(sessionStorage.getItem("kennel_customer") !== null)
-    };
+export const ApplicationViews = ({isAuthenticated,setAuthUser}) => {
     return (
         <>
 

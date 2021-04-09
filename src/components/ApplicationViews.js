@@ -102,7 +102,9 @@ export const ApplicationViews = ({isAuthenticated,setAuthUser}) => {
 
 
             <Route path="/login">
-                <Login  setAuthUser={setAuthUser}/>
+                <Login 
+                //  setAuthUser={setAuthUser}
+                 />
             </Route>
 
             <Route path="/register">
@@ -110,7 +112,9 @@ export const ApplicationViews = ({isAuthenticated,setAuthUser}) => {
             </Route>
             {/* Render the location list when http://localhost:3000/ */}
             <Route exact path="/">
-                <Home setAuthUser={setAuthUser}/>
+                <Home
+                //  setAuthUser={setAuthUser}
+                />
             </Route>
 
         </>

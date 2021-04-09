@@ -84,6 +84,7 @@ export const AnimalForm = () => {
                     </select>
                 </div>
             </fieldset>
+            
             <fieldset>
                 <div className="form-group">
                     <label htmlFor="customerId">Customer: </label>
@@ -97,6 +98,12 @@ export const AnimalForm = () => {
                     </select>
                 </div>
             </fieldset>
+            <fieldset>
+                <div className="form-group">
+                    <label htmlFor="name">Animal image URL:</label>
+                    <input type="text" id="image" onChange={handleControlledInputChange} required autoFocus className="form-control" placeholder="Animal image URL" value={animal.image} />
+                </div>
+                </fieldset>
             <button className="btn btn-primary"
                 onClick={handleClickSaveAnimal}>
                 Save Animal

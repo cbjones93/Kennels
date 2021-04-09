@@ -5,7 +5,7 @@ import { PropsAndState } from "../PropsAndState";
 import "./AnimalForm.css"
 import { useParams } from "react-router-dom"
 import { getAllLocations } from "../../modules/LocationManager";
-import {getAllCustomers } from "../../modules/CustomerManager"
+import { getAllCustomers } from "../../modules/CustomerManager"
 
 
 export const AnimalEditForm = () => {
@@ -51,7 +51,8 @@ export const AnimalEditForm = () => {
             name: animal.name,
             breed: animal.breed,
             locationId: animal.locationId,
-            customerId: animal.customerId
+            customerId: animal.customerId,
+            image: animal.image
         };
         updatedAnimal(editedAnimal)
             .then(() => history.push("/animals"))
@@ -86,7 +87,7 @@ export const AnimalEditForm = () => {
                             id="breed"
                             value={animal.breed}
                         />
-
+                        <label htmlFor="breed">Breed</label>
                         <label htmlFor="customerId">Customer: </label>
                         <select value={animal.customerId} name="customer" id="customerId" onChange={handleControlledInputChange} className="form-control" >
                             <option value="0">Select a customer</option>
@@ -96,7 +97,6 @@ export const AnimalEditForm = () => {
                                 </option>
                             ))}
                         </select>
-                        <label htmlFor="location">Assign to location: </label>
                         <select value={animal.locationId} name="locationId" id="locationId" onChange={handleControlledInputChange} className="form-control" >
                             <option value="0">Select a location</option>
                             {locations.map(l => (
@@ -106,9 +106,19 @@ export const AnimalEditForm = () => {
                             ))}
                         </select>
 
+                        <label htmlFor="location">Assign to location: </label>
+                        <input
+                            type="text"
+                            required
+                            className="form-control"
+                            onChange={handleFieldChange}
+                            id="image"
+                            value={animal.image}
+                        />
+
+                    <label htmlFor="image">Animal image URL:</label>
+
                     </div>
-
-
                     <div className="alignRight">
                         <button
                             type="button" disabled={isLoading}

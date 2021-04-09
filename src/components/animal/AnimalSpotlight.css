@@ -1,13 +1,16 @@
 .animal-spotlight {
     max-width: 400px;
-    display: flex;
+    margin: auto;
+    display: block;
     border: 1px dashed gray;
     padding: 10px;
+    text-align: center;
+    justify-content: center;
+    background-color: rgba(33, 127, 204, 0.712);
   }
   
   .animal-spotlight img {
     width: 200px;
-    margin-right: 20px;
   }
   
   .animal-spotlight p {

@@ -4,6 +4,7 @@ import { deleteAnimal, getAllAnimals, } from '../../modules/AnimalManager';
 import {useHistory} from 'react-router-dom'
 
 
+
 export const AnimalList = () => {
     
     const history = useHistory();

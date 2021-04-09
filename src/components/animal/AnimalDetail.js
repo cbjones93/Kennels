@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { deleteAnimal, getAnimalById } from '../../modules/AnimalManager';
-import './AnimalDetail.css';
+import "./AnimalDetail.css";
 import { useParams, useHistory } from "react-router-dom"
 
 export const AnimalDetail = () => {
@@ -23,7 +23,8 @@ const [isLoading, setIsLoading]= useState(true);
           name: animal.name,
           breed: animal.breed,
           location:animal.location,
-          customer:animal.customer
+          customer:animal.customer,
+          image:animal.image
         });
         setIsLoading(false);
       });
@@ -36,6 +37,7 @@ const [isLoading, setIsLoading]= useState(true);
       {/* What's up with the question mark???? See below.*/}
       <div className="animal__location">Location: {animal.location?.name}</div>
       <div className="animal__owner">Customer: {animal.customer?.name}</div>
+      <img className="animal_image" src={animal.image} alt={animal.name}/>
       <button type="button" disabled={isLoading} onClick={handleDelete}>
           Discharge
         </button>

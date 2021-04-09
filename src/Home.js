@@ -3,6 +3,7 @@ import { AnimalSpotlight } from "./components/animal/AnimalSpotlight"
 import { getRandomId } from "./modules/AnimalManager"
 import { PropsAndState } from '../src/components/PropsAndState'
 import { getAllData } from './modules/DataManager'
+import './Home.css'
 
 export const Home = () => {
     const [spotlightId, setSpotlightId] = useState(0);
@@ -15,6 +16,7 @@ export const Home = () => {
     }, []);
     return (
         <>
+        <div className="homeDetails">
             <h2>Nashville Kennels</h2>
             <small>Loving care when you're not there.</small>
 
@@ -28,6 +30,7 @@ export const Home = () => {
                 spotlightId && <AnimalSpotlight animalId={spotlightId} />
             }
             <PropsAndState yourName={"Cody"} />
+            </div>
         </>
     );
 }

@@ -5,21 +5,32 @@
       "name": "Poodles",
       "breed": "Poodle",
       "locationId": 1,
-      "customerId": 1
+      "customerId": 1,
+      "image": "https://th.bing.com/th/id/OIP.yviUcgLu_csyWi3o9PnhgQHaE7?pid=ImgDet&rs=1"
     },
     {
       "id": 2,
       "name": "Decker",
       "breed": "German Shepherd",
       "customerId": 1,
-      "locationId": 1
+      "locationId": 1,
+      "image": "https://lazypawvet.com/wp-content/uploads/2015/11/German-Shepherd-Bailey-Mitchell3.jpg"
     },
     {
       "name": "Ray",
       "breed": "Lab",
       "locationId": 1,
       "customerId": 2,
-      "id": 3
+      "id": 3,
+      "image": "https://vignette.wikia.nocookie.net/thecompletedog/images/3/3e/Black_labrador.jpg/revision/latest?cb=20150112230048"
+    },
+    {
+      "name": "Doge",
+      "breed": "Shiba Inu",
+      "locationId": 2,
+      "customerId": 2,
+      "image": "https://th.bing.com/th/id/OIP.ANB6grJ52z3a-9Ilh9vl0wHaFO?pid=ImgDet&rs=1",
+      "id": 4
     }
   ],
   "customers": [

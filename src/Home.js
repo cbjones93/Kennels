@@ -24,12 +24,12 @@ export const Home = () => {
                 <div>Visit Us at the Nashville North Location</div>
                 <div>500 Puppy Way</div>
             </address>
+            <PropsAndState yourName={"Cody"} />
             <h1>Animal Spotlight</h1>
-            <button onClick = {refreshSpotlightAnimal}>Reload &#x27f3;</button>
             {
                 spotlightId && <AnimalSpotlight animalId={spotlightId} />
             }
-            <PropsAndState yourName={"Cody"} />
+            <button onClick = {refreshSpotlightAnimal}>Reload &#x27f3;</button>
             </div>
         </>
     );

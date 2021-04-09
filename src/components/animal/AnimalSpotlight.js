@@ -15,7 +15,7 @@ export const AnimalSpotlight = ({animalId}) =>{
         <div className="animal-spotlight">
         {/* <img src={require('./dog.svg')} alt="My Dog" /> */}
         <div>
-          <h2>{animal.name}</h2>
+          <h3>{animal.name}</h3>
           <h4>{animal.breed}</h4>
           <img className="animal_image" src={animal.image} alt={animal.name}/>
         </div>
